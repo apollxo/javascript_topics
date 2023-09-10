@@ -183,4 +183,68 @@ let result = arr.map(function(item, index, array) {
 let length = ['Hello', 'sup', 'joke', 'world'].map((item) => item.length >= 4) //
 console.log(length)
 
-//sort() method
+//sort() method sorts elements as string, here is an example with numbers
+
+let nums = [1,2,15]
+console.log(nums.sort()) // output > [ 1, 15, 2 ] Because, items are converted to strings for comparison. It sorts by lexicographical order. (https://en.wikipedia.org/wiki/Lexicographic_order)
+
+// to use sort, you need to create our own function. 
+
+function sorted(a,b) {
+  if(a > b) return 1;
+  if(a == b) return 0;
+  if(a < b) return -1;
+}
+
+console.log(nums.sort(sorted)) //output >  [ 1, 2, 15 ]
+
+// shorter way to do same as above
+
+nums = [1,2,87]
+
+console.log(nums.sort((a,b) => {return  a - b}))
+
+//localeCompare() method is really handy for comparing strings. Because  It compares letters by their codes by default.
+
+const cities = ['Österreich', 'Andorra', 'Vietnam'] 
+console.log(cities.sort((a,b) => a > b ? 1 : -1)) // output > [ 'Andorra', 'Vietnam', 'Österreich' ] (incorect)
+
+console.log(cities.sort((a, b) => a.localeCompare(b))) // output >  Andorra,Österreich,Vietnam (correct!)
+
+// reverse() method reverses the oreder of array 
+arr = [1, 2, 3, 4, 5];
+arr.reverse();
+
+console.log( arr ); // 5,4,3,2,1
+
+arr = ['john', 'anna', 'bonapart']
+console.log(arr.reverse()) // [ 'bonapart', 'anna', 'john' ]
+
+// split() and join()
+// Imagine we have a  comma-delimited string with names like: 'James, Anna, Thomas, Robert'
+//We have to convert it to array. split() method will handle this issue
+
+let names = 'James, Anna, Thomas, Robert'
+
+// split() method returns array as result
+
+console.log(names.split(', ')) // output >  [ 'James', 'Anna', 'Thomas', 'Robert' ]
+
+// By the way, split() method can have second parameter split(', ', 3). 3 is now limit for how many items are placed in array, other will be ignored
+
+
+arr = 'Bilbo, Gandalf, Nazgul, Saruman'.split(', ', 2);
+
+console.log(arr); // Bilbo, Gandalf
+
+// You can split a word into letters with split('')
+
+let word = 'gatsby'
+console.log(word.split('')) //  output > [ 'g', 'a', 't', 's', 'b', 'y' ]
+
+// At this point, there is a method can do these things vice versa. join() method make all splitted items into single one element.
+
+let sentence = ['I', 'am', 'not' , 'an' , 'imposter']
+console.log(sentence.join(' ')) // output > I am not an imposter 
+
+
