@@ -116,4 +116,45 @@ let fruits = ['Apple', 'Orange', 'Apple']
 console.log( fruits.indexOf('Apple') ); // 0 (first Apple)
 console.log( fruits.lastIndexOf('Apple') ); // 2 (last Apple)
 
+// find() method helps to find item from objects that are placed in array like this:
+// let arr = [{
+//   name: 'John',
+//   age: 20
+// },
+// {
+//  name: 'Anna',
+//  age: 30
+// }
+// ] 
 
+// Example
+
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let user = users.find(item => item.id == 1)
+
+console.log(user.name) // 'John'
+
+
+// findIndex() method returns the index, not item itself. If nothing found then it returns -1
+
+
+users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"},
+  {id: 4, name: "John"}
+];
+
+console.log(users.findIndex(user => user.name === 'Pete')) // output > 1 
+
+// lastIndexOf() method also returns index, but it runs from right to left 
+// Consider 'John' value placed in index of 0 within the array, if you use lastIndexOf(), it returns 3. Because its in index 3 when you look from right to left
+
+console.log(users.lastIndexOf(user => user.name === 'John')); // output > 3
+
+// filter() method 
