@@ -158,3 +158,29 @@ console.log(users.findIndex(user => user.name === 'Pete')) // output > 1
 console.log(users.lastIndexOf(user => user.name === 'John')); // output > 3
 
 // filter() method 
+// when you use find() method, you can find only one element, but with filter() you can find multiple items at the same time 
+// syntax >>> arr.filter(function)
+
+users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let firstUsers = users.filter((user) => user.id < 3)
+console.log(firstUsers) // output >  [{id: 1, name: "John"}, {id: 2, name: "Pete"}]
+
+// map() method transform and reorder the array. it calls function for every item and returns array of result
+// Syntax 
+
+let result = arr.map(function(item, index, array) {
+  // returns the new value instead of item
+});
+
+
+//Example: map() returns true if a word contains 4 or longer words 
+
+let length = ['Hello', 'sup', 'joke', 'world'].map((item) => item.length >= 4) //
+console.log(length)
+
+//sort() method
