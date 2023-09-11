@@ -247,4 +247,81 @@ console.log(word.split('')) //  output > [ 'g', 'a', 't', 's', 'b', 'y' ]
 let sentence = ['I', 'am', 'not' , 'an' , 'imposter']
 console.log(sentence.join(' ')) // output > I am not an imposter 
 
+// reduce() method runs function for each element in array. It contains these 4 arguments:
+//accumulator – is the result of the previous function call, equals initial the first time (if initial is provided).
+//item – is the current array item.
+// index – is its position.
+//array – is the array.
+//
+//Examples 
+//1) Adding all numbers in array 
+nums = [23,43,21,89]
 
+const res = nums.reduce((total, item) =>  total + item)
+console.log(res) //output > 176
+
+// 2) Getting all prices added
+let products = [
+  {
+    item: 'motor', price: 300
+  },
+  {
+    item: 'monitor', price: 200
+  },
+  {
+    item: 'tire', price: 120
+  }
+]
+
+const allCost = products.reduce(
+  (total, itm) =>{
+    return total + itm.price
+  }, 0 // starting number
+)
+console.log(allCost) // 620
+
+// 3) Getting all names in to one array 
+
+const allProductNames = products.reduce((name, item) =>{
+  name.push(item.item)
+  return name
+}, [])
+console.log(allProductNames) // ['motor', 'monitor', 'tire' ]
+
+// reduceRight() method does the same, but goes from right to left
+
+//-----------------------------------------------------------------------
+
+// isArray() method return true if data is array, otherwise false
+// Example 
+
+console.log(Array.isArray({})) // false Because its object 
+console.log(Array.isArray([])) // true Because its array
+
+
+// Using object as a filter
+
+let presidentReq = {
+  min: 30,
+  max: 70,
+  lived: 10,
+  isValid(user){
+    return user.age >= this.min && user.lived >= this.lived
+  }
+};
+
+// Candidate list
+
+let candidates = [
+  { name: 'John', age: 45, lived: 20 },
+  { name: 'Sally', age: 28, lived: 5 },
+  { name: 'Bob', age: 23, lived: 15 },
+  { name: 'Alice', age: 35, lived: 12 }
+];
+
+const passedCand = candidates.filter((candidate) => presidentReq.isValid(candidate))
+
+console.log(passedCand) // output [{ name: 'John', age: 45, lived: 20 },{ name: 'Alice', age: 35, lived: 12 }]
+
+//There are few more array methods. but all methods mentioned above are often used 99% of time. 
+//If you need more, See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
