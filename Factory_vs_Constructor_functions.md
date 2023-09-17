@@ -99,3 +99,73 @@ var e = new Number(25);
 var f = new Boolean();
 var g = new Boolean(true);
 ```
+
+
+# Factory Functions 
+
+Factory Functions are a very useful tool in JavaScript. Factory Functions in JavaScript are similar to constructor functions/class functions, but they do not require the use of the ‘this‘ keyword for inner values or the use of the ‘new‘ keyword when instantiating new objects. Factory Functions can contain inner values, methods, etc. just like normal regular functions. Factory Functions differ from regular functions as they always return an object, which will contain any value, method, etc.
+
+<hr>
+If we have complex logic, and we have to create multiple objects again and again that have the same logic, we can write the logic once in a function and use that function as a factory to create our objects. It’s exactly the same as a real-world factory producing products.
+
+Example 
+
+```js 
+	// Function creating new objects
+	// without use of 'new' keyword
+	function createRobot(name) {
+		return {
+			name: name,
+			talk: function () {
+				console.log('My name is '
+				+ name + ', the robot.');
+			}
+		};
+	}
+
+	//Create a robot with name Chitti
+	const robo1 = createRobot('Chitti');
+
+	robo1.talk();
+
+
+	// Create a robot with name Chitti 2.O Upgraded
+	const robo2 = createRobot('Chitti 2.O Upgraded');
+
+	robo2.talk();
+// output 
+
+//My name is Chitti, the robot.
+//My name is Chitti 2.0 Upgraded, the robot.
+```
+
+Example2: 
+```js 
+	// Factory Function creating person
+	var Person = function (name, age) {
+
+		// creating person object
+		var person = {};
+
+		// parameters as keys to this object
+		person.name = name;
+		person.age = age;
+
+		// function to greet
+		person.greeting = function () {
+			return (
+				'Hello I am ' + person.name
+					+ '. I am ' + person.age
+					+ ' years old. '
+			);
+		};
+		return person;
+	};
+
+	var person1 = Person('Abhishek', 20);
+	console.log(person1.greeting());
+
+	var person2 = Person('Raj', 25);
+	console.log(person2.greeting());
+```
+
