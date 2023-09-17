@@ -30,7 +30,20 @@ console.log(Bob, Anna)// output {
 //   age: 22
 // }  
 ```
+**You can add function to Constructor**
 
+```js
+function User(name, age){
+    this.name;
+    this.age = age 
+    this.sayHello = function(){
+        console.log('HEllo '+name )
+    }
+}
+
+const Bob = User('Bob', 12)
+Bov.sayHello() //Hello Bob
+```
 # Constructor vs Object Literal
 
 **Object literal**
