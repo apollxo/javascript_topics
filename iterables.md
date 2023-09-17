@@ -1,6 +1,6 @@
 # Iterables
 
-Iterable objects are a generalization of arrays. That’s a concept that allows us to make any object useable in a <u>for..of</u> loop.
+Iterable objects are a generalization of arrays. That’s a concept that allows us to make any object useable in a <ins>for..of</ins> loop.
 
 ## for ... of 
 
@@ -24,6 +24,10 @@ for (const element of array1) {
 // Expected output: "c"
 ```
 
-***Note***
+***Note:***
 Each iteration creates a new variable. Reassigning the variable inside the loop body does not affect the original value in the iterable (an array, in this case).
 
+
+## Symbol.iterator
+
+<ins>Symbol.iterator</ins> is the protocol that makes native objects like Array, Set, and Map iterable by providing a hook into language features like for…of loops and the spread operator.
