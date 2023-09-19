@@ -231,3 +231,7 @@ alert(chars.length); // 2
 ```
 
 ## What's surrogate pair:
+
+The term "surrogate pair" refers to a means of encoding Unicode characters with high code-points in the UTF-16 encoding scheme.
+
+To be continued...
