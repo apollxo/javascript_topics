@@ -8,5 +8,7 @@
 * [Finding sensitive words](https://github.com/apollxo/js_tutorial/blob/main/find_sensitive_words.js)
 * [Array methods](https://github.com/apollxo/js_tutorial/blob/main/array_methods.js)
 * [Iterables](https://github.com/apollxo/javascript_topics/blob/main/iterables.md)
+
+
 @apollxo
 
